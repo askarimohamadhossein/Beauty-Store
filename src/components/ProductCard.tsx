@@ -1,9 +1,12 @@
+"use client";
 import { TProduct } from "@/types/products.type";
 import { Button } from "@heroui/button";
 import { Card, CardFooter } from "@heroui/card";
 import { Image } from "@heroui/image";
+import { useRouter } from "next/navigation";
 
 export default function ProductCard({ product }: { product: TProduct }) {
+  const router = useRouter();
   return (
     <Card isFooterBlurred className="border-none" radius="lg">
       <Image
@@ -21,6 +24,9 @@ export default function ProductCard({ product }: { product: TProduct }) {
           radius="lg"
           size="sm"
           variant="flat"
+          onClick={() =>
+            router.push(`/products/${product.category}/${product.id}`)
+          }
         >
           View
         </Button>
