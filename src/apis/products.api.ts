@@ -16,7 +16,7 @@ export async function getProductById(id: string): Promise<TProduct> {
 export async function getProductsByCategory(
   category: string
 ): Promise<TProductList> {
-  const res = await fetch(`${API_URL}/category/${category}?limit=${LIMIT}}`);
+  const res = await fetch(`${API_URL}/category/${category}?limit=${LIMIT}`);
   return res.json();
 }
 
